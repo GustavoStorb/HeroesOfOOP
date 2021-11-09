@@ -7,6 +7,7 @@ import java.util.Arrays;
 
 public class CreateNewGameMenu extends GameMenu<Integer> {
 
+    // Menu para inicial de novo jogo
     @Override
     public Integer execute() {
         String menu = "1 - Nova partida\n0 - Sair do jogo\n";
