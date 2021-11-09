@@ -16,13 +16,13 @@ public class HeroesOfOOP {
      }
 
     public static void main(String[] args) {
-        CreateNewGameMenu createNewGameMenu = new CreateNewGameMenu();
+        CreateNewGameMenu createNewGameMenu = new CreateNewGameMenu(); // cria um novo menu inicial do jogo
 
         Integer newGameMenu = createNewGameMenu.execute();
         if(newGameMenu == 0) return;
 
          HeroesOfOOP game = new HeroesOfOOP();
-         game.start();
+         game.start(); // inicia o jogo
     }
 
 }
