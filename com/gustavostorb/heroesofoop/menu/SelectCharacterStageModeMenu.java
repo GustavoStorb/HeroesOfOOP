@@ -7,6 +7,7 @@ import java.util.Arrays;
 
 public class SelectCharacterStageModeMenu extends GameMenu<Integer> {
 
+    // Menuu para selecionar modo de Defesa ou Ataque do personagem.
     @Override
     public Integer execute() {
         String menu = "1 - Ataque\n2 - Defesa\n0 - Sair do jogo\n";
