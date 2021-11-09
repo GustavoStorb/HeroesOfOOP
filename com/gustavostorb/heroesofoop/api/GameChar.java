@@ -2,12 +2,12 @@ package com.gustavostorb.heroesofoop.api;
 
 public abstract class GameChar {
 
-    private final String name;
-    private final GameCharType type;
-    private final GameWeapon weapon;
-    private final Double attack;
-    private final Double defense;
-    private Double health;
+    private final String name; // variavel tipo string para armazenar nome do personagem
+    private final GameCharType type; // variavel para armazenar o tipo do personagem (MAGE, ARCHER, WARRIOR)
+    private final GameWeapon weapon; // variavel para armazenar o tipo de arma do personagem 
+    private final Double attack; // variavel tipo double para armazenar o ataque dos personagens
+    private final Double defense; // variavel tipo double para armazenar a defesa dos personagens
+    private Double health; // variavel tipo double para armazenar a vida dos personagens
 
     public GameChar(String name, GameCharType type, GameWeapon weapon, Double attack, Double defense, Double health) {
         this.name = name;
