@@ -15,6 +15,8 @@ public class SelectCharacterStageMenu extends GameMenu<GameChar> {
         this.game = game;
     }
 
+    
+    // Menu para selecionar o personagem que ira atacar ou defender no Round/Stage e informar seus atributos (ATK, DEF, HP).
     @Override
     public GameChar execute() {
         StringBuilder menu = new StringBuilder("Escolha o personagem do round:");
