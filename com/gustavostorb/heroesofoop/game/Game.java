@@ -19,12 +19,13 @@ public class Game {
     private Integer stage;
 
     public Game() {
-        this.characters = new ArrayList<>();
-        this.dragon = new Dragon();
-        this.defensiveChar = null;
-        this.stage = 0;
+        this.characters = new ArrayList<>(); // cria uma nova lista de personagens
+        this.dragon = new Dragon(); // cria um novo dragão
+        this.defensiveChar = null; // seta o modo defensivo do personagem para 0 ou null.
+        this.stage = 0; // define o round/stage para 0
     }
 
+    
     public void start() {
         try {
             StartGameMenu startGameMenu = new StartGameMenu();
@@ -80,14 +81,14 @@ public class Game {
                 GameChar randomChar = this.characters.get(random.nextInt(this.characters.size())); // pegar um personagem aleatório
                 Double defense = randomChar.getDefense();
                 if(defensiveChar == randomChar) {
-                    int extraDefense = (int) ((10.0 / 100.0) * defense);
+                    int extraDefense = (int) ((10.0 / 100.0) * defense); // adiciona 10% de defesa a defesa do personagem caso ele esteja no modo defensivo
                     defense += extraDefense;
                 }
 
                 double damage = dragon.getAttack() - defense; // ATAQUE DO DRAGÃO - DEFESA DO PERSONAGEM ALEATORIO
 
                 if(damage == 0) {
-                    JOptionPane.showMessageDialog(null, "O personagem " + randomChar.getName() + " se defendeu do dragão com sucesso e não sofreu nenhum dano.", "SE SAFOU DESSA!.", JOptionPane.OK_OPTION);
+                    JOptionPane.showMessageDialog(null, "O personagem " + randomChar.getName() + " se defendeu do dragão com sucesso e não sofreu nenhum dano.", "SE SAFOU DESSA!.", JOptionPane.OK_OPTION); // if criado para mandar mensagem caso defesa do personagem = ataque do dragão.
                     this.nextStage();
                     return;
                 }
@@ -96,20 +97,20 @@ public class Game {
                     double receivedDamage = defense - dragon.getAttack();
                     dragon.removeHealth(receivedDamage);
 
-                    JOptionPane.showMessageDialog(null, "O dragão tentou atacar o personagem " + randomChar.getName() + " e sofreu " + receivedDamage + " de dano, pois a defesa do personagem é maior que o ataque dele.", "BURRAO MANÉ", JOptionPane.OK_OPTION);
+                    JOptionPane.showMessageDialog(null, "O dragão tentou atacar o personagem " + randomChar.getName() + " e sofreu " + receivedDamage + " de dano, pois a defesa do personagem é maior que o ataque dele.", "BURRAO MANÉ", JOptionPane.OK_OPTION); // if criado para mandar mensagem caso a defesa do personagem seja maior que do dragão.
                     this.nextStage();
                     return;
                 }
 
                 if(randomChar.getHealth() <= damage) {
                     this.characters.remove(randomChar);
-                    JOptionPane.showMessageDialog(null, "Nããããoo, o personagem " + randomChar.getName() + " foi morto pelo dragão.", "Personagem Morto.", JOptionPane.OK_OPTION);
+                    JOptionPane.showMessageDialog(null, "Nããããoo, o personagem " + randomChar.getName() + " foi morto pelo dragão.", "Personagem Morto.", JOptionPane.OK_OPTION); // mensagem caso dragão retire todos pontos de vida de algum personagem.
                     this.nextStage();
                     return;
                 }
 
                 randomChar.removeHealth((dragon.getAttack() - randomChar.getDefense())); // remove a vida do personagem selecionado.
-                JOptionPane.showMessageDialog(null, "O dragão atacou " + randomChar.getName() + " e retirou " + damage + " de vida.", "AAAAA QUE DANO!", JOptionPane.OK_OPTION);
+                JOptionPane.showMessageDialog(null, "O dragão atacou " + randomChar.getName() + " e retirou " + damage + " de vida.", "AAAAA QUE DANO!", JOptionPane.OK_OPTION); // mensagem de quando o dragão ataca algum personagem aleatorio.
                 this.nextStage();
                 return;
             }
@@ -134,7 +135,7 @@ public class Game {
             double damage = gameChar.getAttack() - dragon.getDefense();
             dragon.removeHealth(damage);
 
-            JOptionPane.showMessageDialog(null, "O personagem " + gameChar.getName() + " atacou o dragão e retirou " + (int) damage + " de vida. Agora ele possuí " + dragon.getHealth() + " de vida restante.", "AAAAA ENTÃO TOMA!", JOptionPane.OK_OPTION);
+            JOptionPane.showMessageDialog(null, "O personagem " + gameChar.getName() + " atacou o dragão e retirou " + (int) damage + " de vida. Agora ele possuí " + dragon.getHealth() + " de vida restante.", "AAAAA ENTÃO TOMA!", JOptionPane.OK_OPTION); // mensagem de quando o personagem ataca o dragão e tira pontos de vida dele.
             this.nextStage();
         } catch(Exception ignored) {
 
