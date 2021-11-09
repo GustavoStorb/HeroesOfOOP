@@ -4,7 +4,7 @@ import com.gustavostorb.heroesofoop.api.GameWeapon;
 
 public class Wand extends GameWeapon {
 
-    public Wand() {
+    public Wand() { // criação da classe do varinha junto com seu nome e atributos
         super("Varinha", 16.0, 9.0);
     }
 }
