@@ -67,9 +67,9 @@ public class Game {
                 return;
             }
 
-            boolean dragonIsDead = this.dragon.getHealth() <= 0.0;
+            boolean dragonIsDead = this.dragon.getHealth() <= 0.0; // verificação se a vida do dragão é menor igual a 0
             if(dragonIsDead) {
-                JOptionPane.showMessageDialog(null, "Parabéns, você derrotou o dragão e ganhou Heroes Of OOP.", "UHUUU VITÓRIA!", JOptionPane.OK_OPTION);
+                JOptionPane.showMessageDialog(null, "Parabéns, você derrotou o dragão e ganhou Heroes Of OOP.", "UHUUU VITÓRIA!", JOptionPane.OK_OPTION); // mensagem caso voce derrote o dragão
                 return;
             }
 
