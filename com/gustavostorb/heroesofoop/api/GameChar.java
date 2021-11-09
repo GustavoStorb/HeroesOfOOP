@@ -18,7 +18,7 @@ public abstract class GameChar {
         this.health = health;
     }
 
-    // getters e setters
+    // getters e setters dos personagens
     
     public String getName() {
         return name;
