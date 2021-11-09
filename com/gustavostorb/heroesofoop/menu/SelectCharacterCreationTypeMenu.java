@@ -8,6 +8,7 @@ import java.util.Arrays;
 
 public class SelectCharacterCreationTypeMenu extends GameMenu<GameCharType> {
 
+    // Menu para selecionar o tipo do personagem
     @Override
     public GameCharType execute() {
         String menu = "Escolhe seu tipo:\n1 - Guerreiro\n2 - Mago\n3 - Arqueiro\n0 - Sair";
