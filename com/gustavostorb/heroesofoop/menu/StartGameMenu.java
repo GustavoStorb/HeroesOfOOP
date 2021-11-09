@@ -7,6 +7,7 @@ import java.util.Arrays;
 
 public class StartGameMenu extends GameMenu<Integer> {
 
+    // Menu principal onde possui opções gerais.
     @Override
     public Integer execute() {
         String menu = "1 - Criar personagem\n2 - Começar a partida\n0 - Sair do jogo\n";
