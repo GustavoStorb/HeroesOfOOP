@@ -12,11 +12,11 @@ import java.util.Random;
 
 public class Game {
 
-    private final List<GameChar> characters;
-    private final GameChar dragon;
+    private final List<GameChar> characters; // variavel privada de lista dos personagens
+    private final GameChar dragon; // variavel privada do dragao
 
-    private GameChar defensiveChar;
-    private Integer stage;
+    private GameChar defensiveChar; // variavel do modo defensivo
+    private Integer stage; // variavel tipo Integer para contar o round/stage
 
     public Game() {
         this.characters = new ArrayList<>(); // cria uma nova lista de personagens
@@ -33,8 +33,8 @@ public class Game {
             if(gameMenu == 0) return;
 
             if(gameMenu == 1) { // 1 = criar personagem
-                if(this.characters.size() >= 3) {
-                    JOptionPane.showMessageDialog(null, "Você já possuí 3 personagens.", "AVISO", JOptionPane.ERROR_MESSAGE);
+                if(this.characters.size() >= 3) { // verifica se voce possui 3 personagens
+                    JOptionPane.showMessageDialog(null, "Você já possuí 3 personagens.", "AVISO", JOptionPane.ERROR_MESSAGE); // mensagem de erro caso voce ja tenha criado mais 3 personagens
                     this.start();
                     return;
                 }
@@ -46,8 +46,8 @@ public class Game {
                 return;
             }
 
-            if(this.characters.size() < 1) {
-                JOptionPane.showMessageDialog(null, "Você não possuí nenhum personagem.", "AVISO", JOptionPane.ERROR_MESSAGE);
+            if(this.characters.size() < 1) { // verifica se voce possui no minimo 1 personagem
+                JOptionPane.showMessageDialog(null, "Você não possuí nenhum personagem.", "AVISO", JOptionPane.ERROR_MESSAGE); // mensagem de erro caso voce não possua nenhum personagem
                 this.start();
                 return;
             }
@@ -67,7 +67,7 @@ public class Game {
                 return;
             }
 
-            boolean dragonIsDead = this.dragon.getHealth() <= 0.0; // verificação se a vida do dragão é menor igual a 0
+            boolean dragonIsDead = this.dragon.getHealth() <= 0.0; // verificação se a vida do dragão é menor igual a 0 e se sim coloca na variavel dragonIsDead
             if(dragonIsDead) {
                 JOptionPane.showMessageDialog(null, "Parabéns, você derrotou o dragão e ganhou Heroes Of OOP.", "UHUUU VITÓRIA!", JOptionPane.OK_OPTION); // mensagem caso voce derrote o dragão
                 return;
@@ -75,14 +75,14 @@ public class Game {
 
             this.stage++; // avanço o número do round
 
-            boolean isDragonStage = this.stage % 2 == 0; // Caso seja par é o round do dragão. 2, 4, 6 etc.
+            boolean isDragonStage = this.stage % 2 == 0; // Caso seja par sera um round de dragão. 2, 4, 6 etc.
             if(isDragonStage) {
-                Random random = new Random();
-                GameChar randomChar = this.characters.get(random.nextInt(this.characters.size())); // pegar um personagem aleatório
-                Double defense = randomChar.getDefense();
+                Random random = new Random(); // cria uma variavel aleatoria (LIB)
+                GameChar randomChar = this.characters.get(random.nextInt(this.characters.size())); // pegar um personagem aleatório baseado em quantos personagens voce tem
+                Double defense = randomChar.getDefense(); // apos ser aleatorizado pega a defesa de tal personagem
                 if(defensiveChar == randomChar) {
                     int extraDefense = (int) ((10.0 / 100.0) * defense); // adiciona 10% de defesa a defesa do personagem caso ele esteja no modo defensivo
-                    defense += extraDefense;
+                    defense += extraDefense; 
                 }
 
                 double damage = dragon.getAttack() - defense; // ATAQUE DO DRAGÃO - DEFESA DO PERSONAGEM ALEATORIO
@@ -116,7 +116,7 @@ public class Game {
             }
 
             SelectCharacterStageMenu selectCharacterStageMenu = new SelectCharacterStageMenu(this);
-            GameChar gameChar = selectCharacterStageMenu.execute();
+            GameChar gameChar = selectCharacterStageMenu.execute(); 
             if(gameChar == null) return;
 
             SelectCharacterStageModeMenu selectCharacterStageModeMenu = new SelectCharacterStageModeMenu();
