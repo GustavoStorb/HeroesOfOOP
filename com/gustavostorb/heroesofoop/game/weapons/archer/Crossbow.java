@@ -4,7 +4,7 @@ import com.gustavostorb.heroesofoop.api.GameWeapon;
 
 public class Crossbow extends GameWeapon {
 
-    public Crossbow() {
+    public Crossbow() { // criação da classe da balestra junto com seu nome e atributos
         super("Balestra", 15.0, 10.0);
     }
 
