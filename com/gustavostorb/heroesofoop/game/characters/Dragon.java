@@ -5,7 +5,7 @@ import com.gustavostorb.heroesofoop.api.GameCharType;
 
 public class Dragon extends GameChar {
 
-    public Dragon() { // criação da classe do dragão junto com atributos de ataque/defesa/vida
+    public Dragon() { // criação da classe do dragão junto com atributos de ataque/defesa/vida, também  extende outra classe GameChar da API
         super("Dragão", GameCharType.DRAGON, null, 30.0, 30.0, 300.0);
     }
 }
