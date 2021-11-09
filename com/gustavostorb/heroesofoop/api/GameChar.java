@@ -18,6 +18,8 @@ public abstract class GameChar {
         this.health = health;
     }
 
+    // getters e setters
+    
     public String getName() {
         return name;
     }
