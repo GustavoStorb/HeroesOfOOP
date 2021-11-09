@@ -11,6 +11,8 @@ public abstract class GameWeapon {
         this.attack = attack;
         this.defense = defense;
     }
+    
+    // getters e setters das armas
 
     public String getName() {
         return name;
