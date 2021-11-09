@@ -7,6 +7,7 @@ import java.util.regex.Pattern;
 
 public class CreateCharacterCreationNameMenu extends GameMenu<String> {
 
+    // Menu para criação do personagem
     @Override
     public String execute() {
         String menu = "Qual será o nome do seu personagem?";
