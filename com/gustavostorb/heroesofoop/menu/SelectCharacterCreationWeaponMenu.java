@@ -27,6 +27,8 @@ public class SelectCharacterCreationWeaponMenu extends GameMenu<GameChar> {
         this.charType = charType;
     }
 
+    
+    // Menu para seleionar armas dos personagens
     @Override
     public GameChar execute() {
         GameWeapon[] weapons = new GameWeapon[]{};
