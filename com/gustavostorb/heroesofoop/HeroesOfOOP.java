@@ -15,7 +15,7 @@ public class HeroesOfOOP {
          this.game.start();
      }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) { // classe principal
         CreateNewGameMenu createNewGameMenu = new CreateNewGameMenu(); // cria um novo menu inicial do jogo
 
         Integer newGameMenu = createNewGameMenu.execute();
