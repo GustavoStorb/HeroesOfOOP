@@ -17,7 +17,7 @@ import com.gustavostorb.heroesofoop.game.weapons.warrior.Sword;
 import javax.swing.*;
 import java.util.Arrays;
 
-public class SelectCharacterCreationWeaponMenu extends GameMenu<GameChar> {
+public class SelectCharacterCreationWeaponMenu extends GameMenu<GameChar> { // clase extende GameMenu
 
     private final String charName;
     private final GameCharType charType;
@@ -28,12 +28,12 @@ public class SelectCharacterCreationWeaponMenu extends GameMenu<GameChar> {
     }
 
     
-    // Menu para seleionar armas dos personagens
+    // Menu para selecionar armas dos personagens
     @Override
     public GameChar execute() {
         GameWeapon[] weapons = new GameWeapon[]{};
 
-        switch (this.charType) {
+        switch (this.charType) { // switch case para setar armas do tipo do personagem
             case WARRIOR: {
                 weapons = new GameWeapon[]{
                         new Sword(),
