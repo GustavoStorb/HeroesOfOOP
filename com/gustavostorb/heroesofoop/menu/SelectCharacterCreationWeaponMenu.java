@@ -61,9 +61,9 @@ public class SelectCharacterCreationWeaponMenu extends GameMenu<GameChar> { // c
         }
 
         String menu = "Escolhe sua arma:\n1 - "
-                + weapons[0].getName() + " (" + weapons[0].getAttack() + " ATK)"
+                + weapons[0].getName() + " (" + weapons[0].getAttack() + " ATK | " + weapons[0].getDefense() + " DEF)"
                 + "\n2 - "
-                + weapons[1].getName() + " (" + weapons[1].getAttack() + " ATK)"
+                + weapons[1].getName() + " (" + weapons[1].getAttack() + " ATK | " + weapons[1].getDefense() + " DEF)"
                 + "\n0 - Sair";
 
         String option = JOptionPane.showInputDialog(null, menu, "Heroes Of OOP", JOptionPane.INFORMATION_MESSAGE);
