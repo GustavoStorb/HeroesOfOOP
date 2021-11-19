@@ -1,6 +1,6 @@
 # Heroes Of OOP
 
-  ● Projeto de um Jogo 2º Semestre para a materia de Programação Orienta a Objetos da Faculdade SENAI em Florianópolis
+  ● Projeto de um Jogo do 2º Semestre para a materia de Programação Orienta a Objetos da Faculdade SENAI em Florianópolis
   
   ● O jogo é baseado no arquivo que esta em pdf no repositorio principal.
   
