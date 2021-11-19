@@ -71,7 +71,7 @@ public class Game {
             if(dragonIsDead) {
                 JOptionPane.showMessageDialog(null, "Parabéns, você derrotou o dragão e ganhou Heroes Of OOP.", "UHUUU VITÓRIA!", JOptionPane.OK_OPTION); // mensagem caso voce derrote o dragão
                 return;
-            } // ta, ok
+            }
 
             this.stage++; // avanço o número do round
 
@@ -83,7 +83,7 @@ public class Game {
                 if(this.charactersInDefensiveMode.contains(randomChar)) {
                     int extraDefense = (int) ((10.0 / 100.0) * defense); // adiciona 10% de defesa a defesa do personagem caso ele esteja no modo defensivo
                     defense += extraDefense; 
-                }  // diminui u
+                }
 
                 double damage = dragon.getAttack() - defense; // ATAQUE DO DRAGÃO - DEFESA DO PERSONAGEM ALEATORIO
 
