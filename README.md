@@ -24,7 +24,7 @@
  ● E os personagens que ficaram em modo de defesa ganharam 10% a mais de pontos de defesa contra o ataque do dragão
  
  
-# Como vencer ou perder
+# Como vencer ou perder:
  ● Para vencer você precisa retirar todos os pontos de vida do dragão
  
  ● Se você perder todos os pontos de vida do seus personagens eles morrem e então acaba o jogo tambem.
