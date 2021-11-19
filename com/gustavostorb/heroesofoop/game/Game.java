@@ -15,13 +15,13 @@ public class Game {
     private final List<GameChar> characters; // variavel privada de lista dos personagens
     private final GameChar dragon; // variavel privada do dragao
 
-    private GameChar defensiveChar; // variavel do modo defensivo
+    private List<GameChar> charactersInDefensiveMode; // variavel do modo defensivo (lista)
     private Integer stage; // variavel tipo Integer para contar o round/stage
 
     public Game() {
-        this.characters = new ArrayList<>(); // cria uma nova lista de personagens
+        this.characters = new ArrayList<>(); // cria uma nova lista vazia de personagens
         this.dragon = new Dragon(); // cria um novo dragão
-        this.defensiveChar = null; // seta o modo defensivo do personagem para 0 ou null.
+        this.charactersInDefensiveMode = new ArrayList<>(); // cria uma nova lista vazia de personagens em modo defensivo
         this.stage = 0; // define o round/stage para 0
     }
 
@@ -65,13 +65,13 @@ public class Game {
             if(this.characters.size() <= 0) { // verificação para saber se todos os personagem morreram.
                 JOptionPane.showMessageDialog(null, "Todos os seus personagens morreram.", "VOCÊ PERDEU!", JOptionPane.ERROR_MESSAGE);
                 return;
-            }
+            } // diminu iporra nao naio funciona ctrl -
 
             boolean dragonIsDead = this.dragon.getHealth() <= 0.0; // verificação pra saber se a vida do dragão é menor ou igual a 0. retorna true/false
             if(dragonIsDead) {
                 JOptionPane.showMessageDialog(null, "Parabéns, você derrotou o dragão e ganhou Heroes Of OOP.", "UHUUU VITÓRIA!", JOptionPane.OK_OPTION); // mensagem caso voce derrote o dragão
                 return;
-            }
+            } // ta, ok
 
             this.stage++; // avanço o número do round
 
@@ -80,10 +80,10 @@ public class Game {
                 Random random = new Random(); // cria uma variavel aleatoria (LIB)
                 GameChar randomChar = this.characters.get(random.nextInt(this.characters.size())); // pegar um personagem aleatório baseado em quantos personagens voce tem
                 Double defense = randomChar.getDefense(); // apos ser aleatorizado pega a defesa de tal personagem
-                if(defensiveChar == randomChar) {
+                if(this.charactersInDefensiveMode.contains(randomChar)) {
                     int extraDefense = (int) ((10.0 / 100.0) * defense); // adiciona 10% de defesa a defesa do personagem caso ele esteja no modo defensivo
                     defense += extraDefense; 
-                }
+                }  // diminui u
 
                 double damage = dragon.getAttack() - defense; // ATAQUE DO DRAGÃO - DEFESA DO PERSONAGEM ALEATORIO
 
@@ -115,28 +115,31 @@ public class Game {
                 return;
             }
 
-            SelectCharacterStageMenu selectCharacterStageMenu = new SelectCharacterStageMenu(this);
-            GameChar gameChar = selectCharacterStageMenu.execute(); 
-            if(gameChar == null) return;
+            this.charactersInDefensiveMode = new ArrayList<>(); // cria uma nova lista de personagens em modo defensivo.
 
-            SelectCharacterStageModeMenu selectCharacterStageModeMenu = new SelectCharacterStageModeMenu();
-            Integer mode = selectCharacterStageModeMenu.execute();
-            if(mode == 0) return;
+            for(Integer i = 0; i < characters.size(); i++) { // verificar quantos personagens tem
+                GameChar gameChar = this.characters.get(i);
+                SelectCharacterStageModeMenu selectCharacterStageModeMenu = new SelectCharacterStageModeMenu(gameChar);
+                Integer mode = selectCharacterStageModeMenu.execute();
+                if(mode == 0) return; 
 
-            this.defensiveChar = null;
-
-            boolean isDefensiveMode = mode == 2;
-            if(isDefensiveMode) {
-                this.defensiveChar = gameChar;
-                this.nextStage();
-                return;
+                boolean isDefensiveMode = mode == 2; // caso voce selecione a opcao 2 ele entra em modo defensivo
+                if(isDefensiveMode) {
+                    this.charactersInDefensiveMode.add(gameChar);
+                }
             }
 
-            double damage = gameChar.getAttack() - dragon.getDefense();
-            dragon.removeHealth(damage);
+            for(Integer i = 0; i < characters.size(); i++) { // verificar quantos personagens tem
+                GameChar gameChar = this.characters.get(i);
+                boolean inDefensiveMode = this.charactersInDefensiveMode.contains(gameChar); 
+                if(inDefensiveMode) continue; // caso voce nao selecione a opcao 2 ele nao entra em modo defensivo e continua atackando o dragao
 
-            JOptionPane.showMessageDialog(null, "O personagem " + gameChar.getName() + " atacou o dragão e retirou " + (int) damage + " de vida. Agora ele possuí " + dragon.getHealth() + " de vida restante.", "AAAAA ENTÃO TOMA!", JOptionPane.OK_OPTION); // mensagem de quando o personagem ataca o dragão e tira pontos de vida dele.
-            this.nextStage();
+                double damage = gameChar.getAttack() - dragon.getDefense();
+                dragon.removeHealth(damage);
+                JOptionPane.showMessageDialog(null, "O personagem " + gameChar.getName() + " atacou o dragão e retirou " + (int) damage + " de vida. Agora ele possuí " + dragon.getHealth() + " de vida restante.", "AAAAA ENTÃO TOMA!", JOptionPane.OK_OPTION); // mensagem de quando o personagem ataca o dragão e tira pontos de vida dele.
+            } 
+            
+            this.nextStage(); // vai pro proximo round/stage
         } catch(Exception ignored) {
 
         }
@@ -156,7 +159,7 @@ public class Game {
         return selectCharacterCreationWeaponMenu.execute();
     }
 
-    public List<GameChar> getCharacters() {
+    public List <GameChar> getCharacters() {
         return this.characters;
     }
 
