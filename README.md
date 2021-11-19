@@ -2,6 +2,7 @@
 
   ● Projeto de um Jogo 2º Semestre para a materia de Programação Orienta a Objetos da Faculdade SENAI em Florianópolis
   ● O jogo é baseado no arquivo que esta em pdf no repositorio principal.
+  
 
 # Como jogar:
   ● Execute o programa em java
@@ -16,7 +17,7 @@
  ● E os personagens que ficaram em modo de defesa ganharam 10% a mais de pontos de defesa contra o ataque do dragão
 
 # Como vencer ou perder
- ● Para vencer você precisa retirar todos os pontos de vida do dragão;
+ ● Para vencer você precisa retirar todos os pontos de vida do dragão
  ● Se você perder todos os pontos de vida do seus personagens eles morrem e então acaba o jogo tambem.
 
 # Grupo: 
