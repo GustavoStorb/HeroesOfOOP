@@ -97,7 +97,7 @@ public class Game {
                     double receivedDamage = defense - dragon.getAttack();
                     dragon.removeHealth(receivedDamage);
 
-                    JOptionPane.showMessageDialog(null, "O dragão tentou atacar o personagem " + randomChar.getName() + " e sofreu " + receivedDamage + " de dano, pois a defesa do personagem é maior que o ataque dele.", "BURRAO MANÉ", JOptionPane.OK_OPTION); // if criado para mandar mensagem caso a defesa do personagem seja maior que do dragão.
+                    JOptionPane.showMessageDialog(null, "O dragão tentou atacar o personagem " + randomChar.getName() + " e sofreu " + receivedDamage + " de dano, pois a defesa do personagem é maior que o ataque dele.", "BOLA DE FOGO DO DRAGÃO", JOptionPane.OK_OPTION); // if criado para mandar mensagem caso a defesa do personagem seja maior que do dragão.
                     this.nextStage();
                     return;
                 }
