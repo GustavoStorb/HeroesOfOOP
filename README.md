@@ -1,6 +1,6 @@
 # Heroes Of OOP
 
-Projeto de um Jogo para 2º Semestre da Faculdade SENAI em Florianópolis
+  ● Projeto de um Jogo para 2º Semestre da Faculdade SENAI em Florianópolis
 
 
 # Como jogar:
@@ -19,5 +19,5 @@ Projeto de um Jogo para 2º Semestre da Faculdade SENAI em Florianópolis
  ● Para vencer você precisa retirar todos os pontos de vida do dragão;
  ● Se você perder todos os pontos de vida do seus personagens eles morrem e então acaba o jogo tambem.
 
-#Grupo: 
+# Grupo: 
 ● Gustavo Farias Storb & Douglas Vedovelli
