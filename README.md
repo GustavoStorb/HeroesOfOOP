@@ -3,7 +3,6 @@
   ● Projeto de um Jogo 2º Semestre para a materia de Programação Orienta a Objetos da Faculdade SENAI em Florianópolis
   ● O jogo é baseado no arquivo que esta em pdf no repositorio principal.
 
-
 # Como jogar:
   ● Execute o programa em java
   ● Ao iniciar o jogo apareceram opções para iniciar e fechar o jogo
