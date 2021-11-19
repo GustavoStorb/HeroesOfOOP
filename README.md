@@ -1,6 +1,6 @@
 # Heroes Of OOP
 
-  ● Projeto de um Jogo para 2º Semestre da Faculdade SENAI em Florianópolis
+  ● Projeto de um Jogo 2º Semestre para a materia de Programação Orienta a Objetos da Faculdade SENAI em Florianópolis
 
 
 # Como jogar:
@@ -21,3 +21,4 @@
 
 # Grupo: 
 ● Gustavo Farias Storb & Douglas Vedovelli
+● Data: 19 de Novembro de 2021
