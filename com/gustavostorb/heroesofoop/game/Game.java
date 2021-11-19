@@ -65,7 +65,7 @@ public class Game {
             if(this.characters.size() <= 0) { // verificação para saber se todos os personagem morreram.
                 JOptionPane.showMessageDialog(null, "Todos os seus personagens morreram.", "VOCÊ PERDEU!", JOptionPane.ERROR_MESSAGE);
                 return;
-            } // diminu iporra nao naio funciona ctrl -
+            }
 
             boolean dragonIsDead = this.dragon.getHealth() <= 0.0; // verificação pra saber se a vida do dragão é menor ou igual a 0. retorna true/false
             if(dragonIsDead) {
